@@ -1,0 +1,56 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet")
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src='https://cdn.jsdelivr.net/npm/chart.js')
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV", crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="/javascripts/scripts.js")
+  body
+   if user
+    nav(class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark")
+      .container-fluid
+        a(class="navbar-brand" href="/") 
+          img(src='/images/green-mushroom.png' width="30" height="25" class="d-inline-block align-top" alt="")
+          |  Green Capz
+        button(class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" 
+            aria-label="Toggle navigation")
+          span(class="navbar-toggler-icon")
+        div(class="collapse navbar-collapse" id="navbarNavAltMarkup")
+          div(class="navbar-nav")
+            a(class="nav-link" id="nav-2" href="/users/dashboard") Dashboard
+            a(class="nav-link" id="nav-7" href='/users/update') Update Info
+            a(class="nav-link" id="nav-8" href='/users/changepassword') Change Password
+            a(class="nav-link" id="nav-6" href="/users/about") About
+            a(class="nav-link" id="nav-10" href='/users/logout') Logout
+   else 
+    nav(class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark")
+      .container-fluid
+        a(class="navbar-brand" href="/") 
+          img(src='/images/green-mushroom.png' width="30" height="25" class="d-inline-block align-top" alt="")
+          | Green Capz
+        button(class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" 
+            aria-label="Toggle navigation")
+          span(class="navbar-toggler-icon")
+        div(class="collapse navbar-collapse" id="navbarNavAltMarkup")
+          div(class="navbar-nav")
+            a(class="nav-link" id="nav-1" aria-current="page" href="/users") Home
+            a(class="nav-link" id="nav-4" href="/users/login") Login
+            a(class="nav-link" id="nav-5" href="/users/signup") Sign Up
+            a(class="nav-link" id="nav-6" href="/users/about") About
+       
+  block content

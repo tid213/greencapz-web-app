@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  div(class="dashboard-group")
+    div(id="dashboard-menu")
+      div(class="dashboard-user")
+        h2
+          b #{user}
+        p Days active: 0
+        p Readings: #{reading_count}
+      div(class="user-information")
+        a(class='dashboard-links', href='/users/update') Update Info
+        a(class='dashboard-links', href='/users/changepassword') Change Password
+        a(class='dashboard-links', href='/users/logout') Logout
+        a(class='dashboard-links', href='/users/delete') Delete Account
+    div(class="dashboard-info")
+      div(class="graph")
+       canvas(id="graph1")
+       script.
+        var data = JSON.parse('!{JSON.stringify(sensor_data)}');
+        var options = JSON.parse('!{JSON.stringify(chart_options)}');
+        var ctx = document.getElementById("graph1").getContext("2d");
+        var myNewChart = new Chart(ctx , {type: "line", data: data, options: options});
+       canvas(id="graph2")
+       script.
+        var data2 = JSON.parse('!{JSON.stringify(sensor_data2)}');
+        var options2 = JSON.parse('!{JSON.stringify(chart_options2)}');
+        var ctx = document.getElementById("graph2").getContext("2d");
+        var myNewChart = new Chart(ctx , {type: "line", data: data2, options: options2});
+      div(class="graph-right")
+        div(class="gr-top")
+         div(class="gr-top-digit")
+           h2 Room Climate:
+           h3 Temp: #{temperature_3}f 
+           h3 Humidity: 50%
+           p Last sensor reading: #{time_temp_1}
+         div(class="gr-bar")
+          img(src='/images/audio.svg')
+        div(class="gr-middle")
+         div(class="gr-middle-digit")
+           h2 Tent Climate:
+           h3 Temp: #{temperature_2}f
+           h3 Humidity: 50%
+           p Last sensor reading: #{time_temp_1}
+         div(class="gr-bar")
+          img(src='/images/audio.svg')
+        div(class="gr-bottom")
+         div(class="gr-bottom-digit")
+           h2 Water readings:
+           h3 Temp: #{temperature_1}
+           h3 PPM: #{ppm}
+           p Last sensor reading: #{time_temp_1}
+         div(class="gr-bar")
+          img(src='/images/audio.svg')
+       
+  

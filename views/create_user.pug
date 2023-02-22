@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div(class="page-title")
+    h1 #{title}
+    div(class="errors")
+      if errors
+        for i in errors
+          p #{i}
+  form(method='POST', action='')
+    div(class="input-form")
+      label(for='username') Username:
+      input#username.form-control(type='text', name='username', value='')
+      label(for='password') Password(min 8 characters):
+      input#password.form-control(type='password', name='password', value='')
+      label(for='first_name') First Name:
+      input#first_name.form-control(type='text', name='first_name', value='')
+      label(for='last_name') Last Name:
+      input#last_name.form-control(type='text', name='last_name', value='')
+      label(for='dob') Date of birth:
+      input#dob.form-control(type='date', name='dob', value='')
+      label(for='email') Email:
+      input#email.form-control(type='text', name='email', value='')
+    div(class="submit-buttons")
+      button.btn.btn-primary(type='submit') Submit
+
+

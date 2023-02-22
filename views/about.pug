@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div(class="about-page")
+    div(class="about-info")
+      div(class="info-header")
+        h1 About the Green Capz project
+      div(class="info-p")
+        p The Green Capz project was started to assist in monitoring climate sensors 
+          | for indoor home gardens.  The project will take readings from sensors attached 
+          | to a Raspberry Pi and save them to a database.  The user will then be able to 
+          | access these readings from their dashboard.
+        p These readings will include: PH, TDS, Temperature and Humidity.  All very important 
+          | data points to monitor for indoor gardens. Proper PH and TDS are critical for 
+          | optimum growth from your plants.  A controlled temperature and humidity is 
+          | just as important to ensure healthy crops.
+        p With these readings constantly being tracked, it greatly increaces reaction time to fix possible issues. 
+          | Issues unchcked can cause problems from: Nutrient burn, nutrient lock out, or even mold.
+          | With around the clock monitoring these problems can be prevented.  That's why 
+          | Green Capz is here to help.
+    div(class="about-imgs")
+      h2 Example Dashboard
+      img(src='/images/example.jpg')
+    

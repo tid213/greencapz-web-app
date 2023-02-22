@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div(class="page-title")
+    h1 Delete Account!
+    p #{title}
+  form(method='POST', action='/users/delete')
+    div(class="submit-buttons")
+      button.btn.btn-primary(type='submit') Delete Account

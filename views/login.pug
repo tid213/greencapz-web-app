@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div(class="page-title")
+    h1 #{title}
+    div(class="errors")
+      if errors
+        for i in errors
+          p #{i}
+  form(method='POST', action='/users/login')
+    div(class="input-form")
+      label(for='username') Username:
+      input#username.form-control(type='text', name='username', value='')
+      label(for='password') Password:
+      input#password.form-control(type='password', name='password', value='')
+    div(class="submit-buttons")
+      div(class="button-1")
+        button.btn.btn-primary(type='submit') Login
+      div(class="button-2")
+        a(class='btn btn-primary', href='/users/signup') Sign Up
+    div(class="forgot-pass")
+      a(href='/users/forgotpassword') Forgot password?

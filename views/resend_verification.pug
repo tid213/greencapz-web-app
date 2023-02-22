@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div(class="page-title")
+    h1 #{title}
+    p #{text}
+    div(class="errors")
+      if errors
+        for i in errors
+          p #{i}
+  form(method='POST', action='/users/resend')
+    div(class="input-form")
+     label(for='email') Email:
+     input#email.form-control(type='text', name='email', value='')
+    div(class="submit-buttons")
+     button.btn.btn-primary(type='submit') Send
+     button.btn.btn-primary(type='submit') Login

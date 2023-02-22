@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div(class="page-title")
+    h3 #{title}
+    div(class="errors")
+      if errors
+        for i in errors
+          p #{i}
+  form(method='POST', action='/users/addreading')
+    div(class="input-form")
+      label(for='sensor_id') Sensor Name:
+      input#sensor_id.form-control(type='text', name='sensor_id', value='')
+      label(for='timestamp') Date:
+      input#timestamp.form-control(type='date', name='timestamp', value='')
+      label(for='sensor_reading') Reading:
+      input#sensor_reading.form-control(type='text', name='sensor_reading', value='')
+    div(class="submit-buttons")
+      button.btn.btn-primary(type='submit') Submit
+      div(class="errors")
+      if errors
+        for i in errors
+          p #{i}

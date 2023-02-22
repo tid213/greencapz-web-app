@@ -1,0 +1,14 @@
+extends layout
+
+block content
+ div(class="home-page")
+  div(class="page-title")
+    h1 Welcome to Green Capz
+    p Here to help you monitor your indoor garden sensors.
+    p #{title}
+
+  div(class="submit-buttons") 
+    div(class="button-1")
+      a(class='btn btn-primary', href='/users/signup') Sign Up
+    div(class="button-2")
+      a(class='btn btn-primary', href='/users/login') Login

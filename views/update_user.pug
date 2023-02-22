@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div(class="page-title")
+    h1 #{title}
+    div(class="errors")
+      if errors
+        for i in errors
+          p #{i}
+  form(method='POST', action='/users/update')
+    div(class="input-form")
+      label(for='first_name') First Name:
+      input#first_name.form-control(type='text', name='first_name', value=(undefined===user_name ? '' : user_name.first_name))
+      label(for='last_name') Last Name:
+      input#last_name.form-control(type='text', name='last_name', value=(undefined===user_name ? '' : user_name.last_name))
+      label(for='dob') Date of birth:
+      input#dob.form-control(type='date', name='dob', value=(undefined===user_name ? '' : user_name.dob))
+    div(class="submit-buttons")
+      button.btn.btn-primary(type='submit') Submit
